@@ -29,6 +29,13 @@ module "eks" {
   }
 
   fargate_profiles = {
+    default = {
+      name = "default"
+      selectors = [
+        { namespace = "default" }
+      ]
+    }
+    
     example = {
       name = "example"
       selectors = [
@@ -63,6 +70,13 @@ module "eks" {
       name = "kube-system"
       selectors = [
         { namespace = "kube-system" }
+      ]
+    }
+
+    argocd = {
+      name = "argocd"
+      selectors = [
+        { namespace = "argocd" }
       ]
     }
   }
