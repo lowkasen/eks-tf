@@ -79,6 +79,13 @@ module "eks" {
         { namespace = "argocd" }
       ]
     }
+
+    kubecost = {
+      name = "kubecost"
+      selectors = [
+        { namespace = "kubecost" }
+      ]
+    }
   }
 
 }
